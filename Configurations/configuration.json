@@ -1,20 +1,20 @@
 {
-    "ReRoutes": [
+  "Routes": [
       {
-        "DownstreamPathTemplate": "/api/{everything}",
-        "DownstreamScheme": "http",
-        "DownstreamHostAndPorts": [
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
           {
-            "Host": "catalog-api",
-            "Port": 80
+              "Host": "localhost",
+              "Port": 5001
           }
-        ],
-        "UpstreamPathTemplate": "/api/c/{everything}",
-        "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
-      }  
-    ],
-      "GlobalConfiguration": {
-        "RequestIdKey": "OcRequestId",
-        "AdministrationPath": "/administration"
+      ],
+      "UpstreamPathTemplate": "/{everything}",
+      "UpstreamHttpMethod": [ "Post","Get","Put" ]
       }
+  ],
+  "GlobalConfiguration": {
+      "RequestIdKey": "OcRequestId",
+      "AdministrationPath": "/administration"
+  }
 }
