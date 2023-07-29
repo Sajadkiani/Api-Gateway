@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <PackageReference Include="Ocelot" Version="19.0.2" />
+    <PackageReference Include="Ocelot.Provider.Eureka" Version="19.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
 </Project>
