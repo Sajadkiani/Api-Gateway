@@ -1,0 +1,26 @@
+{
+    "SwaggerEndPoints": [
+        {
+            "Key": "BFF.Web",
+            "TransformByOcelotConfig": false,
+            "Config": [
+                {
+                    "Name": "BFF.Web",
+                    "Version": "1.0",
+                    "Url": "https://localhost:7068/swagger/v1/swagger.json"
+                }
+            ]
+        },
+        {
+            "Key": "identity",
+            "TransformByOcelotConfig": true,
+            "Config": [
+                {
+                    "Name": "IDENTITY.API",
+                    "Version": "1.0",
+                    "Url": "https://localhost:5013/swagger/v1/swagger.json"
+                }
+            ]
+        }
+    ]
+}

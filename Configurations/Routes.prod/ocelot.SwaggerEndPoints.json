@@ -1,0 +1,15 @@
+{
+    "SwaggerEndPoints": [
+      {
+        "Key": "Identity",
+        "TransformByOcelotConfig": true,
+        "Config": [
+          {
+            "Name": "IDENTITY.API",
+            "Version": "1.0",
+            "Url": "https://localhost:5013/swagger/v1/swagger.json"
+          }
+        ]
+      }
+    ]
+}

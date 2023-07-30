@@ -1,0 +1,21 @@
+{
+    "Routes": [
+      {
+        "DownstreamPathTemplate": "/{everything}",
+        "DownstreamScheme": "https",
+        "SwaggerKey": "identity",
+        "UseServiceDiscovery": true,
+        "ServiceName": "SERVICE.IDENTITY",
+        "UpstreamPathTemplate": "/{everything}",
+        "UpstreamHttpMethod": [
+          "GET",
+          "POST",
+          "PUT",
+          "DELETE"
+        ],
+        "LoadBalancerOptions": {
+          "Type": "RoundRobin"
+        }
+      }
+    ]
+  }
