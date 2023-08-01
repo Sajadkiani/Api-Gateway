@@ -1,1 +1,150 @@
-{"Routes":[{"SwaggerKey":"identity","DownstreamPathTemplate":"/{everything}","UpstreamPathTemplate":"/{everything}","UpstreamHttpMethod":["GET","POST","PUT","DELETE"],"DownstreamHttpMethod":null,"AddHeadersToRequest":{},"UpstreamHeaderTransform":{},"DownstreamHeaderTransform":{},"AddClaimsToRequest":{},"RouteClaimsRequirement":{},"AddQueriesToRequest":{},"ChangeDownstreamPathTemplate":{},"RequestIdKey":null,"FileCacheOptions":{"TtlSeconds":0,"Region":null},"RouteIsCaseSensitive":false,"ServiceName":"SERVICE.IDENTITY","ServiceNamespace":null,"DownstreamScheme":"https","QoSOptions":{"ExceptionsAllowedBeforeBreaking":0,"DurationOfBreak":0,"TimeoutValue":0},"LoadBalancerOptions":{"Type":"RoundRobin","Key":null,"Expiry":0},"RateLimitOptions":{"ClientWhitelist":[],"EnableRateLimiting":false,"Period":null,"PeriodTimespan":0.0,"Limit":0},"AuthenticationOptions":{"AuthenticationProviderKey":null,"AllowedScopes":[]},"HttpHandlerOptions":{"AllowAutoRedirect":false,"UseCookieContainer":false,"UseTracing":false,"UseProxy":true,"MaxConnectionsPerServer":2147483647},"DownstreamHostAndPorts":[],"UpstreamHost":null,"Key":null,"DelegatingHandlers":[],"Priority":1,"Timeout":0,"DangerousAcceptAnyServerCertificateValidator":false,"SecurityOptions":{"IPAllowedList":[],"IPBlockedList":[]},"DownstreamHttpVersion":null}],"DynamicRoutes":[],"Aggregates":[],"GlobalConfiguration":{"RequestIdKey":"OcRequestId","ServiceDiscoveryProvider":{"Scheme":null,"Host":"BFF.Web","Port":80,"Type":"Eureka","Token":null,"ConfigurationKey":null,"PollingInterval":0,"Namespace":null},"RateLimitOptions":{"ClientIdHeader":"ClientId","QuotaExceededMessage":null,"RateLimitCounterPrefix":"ocelot","DisableRateLimitHeaders":false,"HttpStatusCode":429},"QoSOptions":{"ExceptionsAllowedBeforeBreaking":0,"DurationOfBreak":0,"TimeoutValue":0},"BaseUrl":null,"LoadBalancerOptions":{"Type":null,"Key":null,"Expiry":0},"DownstreamScheme":"http","HttpHandlerOptions":{"AllowAutoRedirect":false,"UseCookieContainer":false,"UseTracing":false,"UseProxy":true,"MaxConnectionsPerServer":2147483647},"DownstreamHttpVersion":null},"SwaggerEndPoints":[{"Key":"BFF.Web","VersionPlaceholder":"{version}","KeyToPath":"BFF.Web","Config":[{"Name":"BFF.Web","Version":"1.0","Url":"https://localhost:7068/swagger/v1/swagger.json","Service":null}],"HostOverride":null,"TransformByOcelotConfig":false,"RemoveUnusedComponentsFromScheme":true,"TakeServersFromDownstreamService":false},{"Key":"identity","VersionPlaceholder":"{version}","KeyToPath":"identity","Config":[{"Name":"IDENTITY.API","Version":"1.0","Url":"https://localhost:5013/swagger/v1/swagger.json","Service":null}],"HostOverride":null,"TransformByOcelotConfig":true,"RemoveUnusedComponentsFromScheme":true,"TakeServersFromDownstreamService":false}]}
+{
+    "Routes": [
+        {
+            "SwaggerKey": "identity",
+            "DownstreamPathTemplate": "/{everything}",
+            "UpstreamPathTemplate": "/{everything}",
+            "UpstreamHttpMethod": [
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE"
+            ],
+            "DownstreamHttpMethod": null,
+            "AddHeadersToRequest": {},
+            "UpstreamHeaderTransform": {},
+            "DownstreamHeaderTransform": {},
+            "AddClaimsToRequest": {},
+            "RouteClaimsRequirement": {},
+            "AddQueriesToRequest": {},
+            "ChangeDownstreamPathTemplate": {},
+            "RequestIdKey": null,
+            "FileCacheOptions": {
+                "TtlSeconds": 0,
+                "Region": null
+            },
+            "RouteIsCaseSensitive": false,
+            "ServiceName": "SERVICE.IDENTITY",
+            "ServiceNamespace": null,
+            "DownstreamScheme": "http",
+            "QoSOptions": {
+                "ExceptionsAllowedBeforeBreaking": 0,
+                "DurationOfBreak": 0,
+                "TimeoutValue": 0
+            },
+            "LoadBalancerOptions": {
+                "Type": "RoundRobin",
+                "Key": null,
+                "Expiry": 0
+            },
+            "RateLimitOptions": {
+                "ClientWhitelist": [],
+                "EnableRateLimiting": false,
+                "Period": null,
+                "PeriodTimespan": 0.0,
+                "Limit": 0
+            },
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": null,
+                "AllowedScopes": []
+            },
+            "HttpHandlerOptions": {
+                "AllowAutoRedirect": false,
+                "UseCookieContainer": false,
+                "UseTracing": false,
+                "UseProxy": true,
+                "MaxConnectionsPerServer": 2147483647
+            },
+            "DownstreamHostAndPorts": [],
+            "UpstreamHost": null,
+            "Key": null,
+            "DelegatingHandlers": [],
+            "Priority": 1,
+            "Timeout": 0,
+            "DangerousAcceptAnyServerCertificateValidator": false,
+            "SecurityOptions": {
+                "IPAllowedList": [],
+                "IPBlockedList": []
+            },
+            "DownstreamHttpVersion": null
+        }
+    ],
+    "DynamicRoutes": [],
+    "Aggregates": [],
+    "GlobalConfiguration": {
+        "RequestIdKey": "OcRequestId",
+        "ServiceDiscoveryProvider": {
+            "Scheme": null,
+            "Host": "eureka-clusterip",
+            "Port": 8761,
+            "Type": "Eureka",
+            "Token": null,
+            "ConfigurationKey": null,
+            "PollingInterval": 0,
+            "Namespace": null
+        },
+        "RateLimitOptions": {
+            "ClientIdHeader": "ClientId",
+            "QuotaExceededMessage": null,
+            "RateLimitCounterPrefix": "ocelot",
+            "DisableRateLimitHeaders": false,
+            "HttpStatusCode": 429
+        },
+        "QoSOptions": {
+            "ExceptionsAllowedBeforeBreaking": 0,
+            "DurationOfBreak": 0,
+            "TimeoutValue": 0
+        },
+        "BaseUrl": null,
+        "LoadBalancerOptions": {
+            "Type": null,
+            "Key": null,
+            "Expiry": 0
+        },
+        "DownstreamScheme": "http",
+        "HttpHandlerOptions": {
+            "AllowAutoRedirect": false,
+            "UseCookieContainer": false,
+            "UseTracing": false,
+            "UseProxy": true,
+            "MaxConnectionsPerServer": 2147483647
+        },
+        "DownstreamHttpVersion": null
+    },
+    "SwaggerEndPoints": [
+        {
+            "Key": "BFF.Web",
+            "VersionPlaceholder": "{version}",
+            "KeyToPath": "BFF.Web",
+            "Config": [
+                {
+                    "Name": "BFF.Web",
+                    "Version": "1.0",
+                    "Url": "https://localhost:7068/swagger/v1/swagger.json",
+                    "Service": null
+                }
+            ],
+            "HostOverride": null,
+            "TransformByOcelotConfig": false,
+            "RemoveUnusedComponentsFromScheme": true,
+            "TakeServersFromDownstreamService": false
+        },
+        {
+            "Key": "identity",
+            "VersionPlaceholder": "{version}",
+            "KeyToPath": "identity",
+            "Config": [
+                {
+                    "Name": "IDENTITY.API",
+                    "Version": "1.0",
+                    "Url": "https://localhost:5013/swagger/v1/swagger.json",
+                    "Service": null
+                }
+            ],
+            "HostOverride": null,
+            "TransformByOcelotConfig": true,
+            "RemoveUnusedComponentsFromScheme": true,
+            "TakeServersFromDownstreamService": false
+        }
+    ]
+}

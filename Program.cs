@@ -1,10 +1,7 @@
 using MMLib.SwaggerForOcelot.DependencyInjection;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Ocelot.Provider.Eureka;
-using Ocelot.Provider.Polly;
 using Steeltoe.Discovery.Client;
 using Steeltoe.Discovery.Eureka;
 
@@ -32,8 +29,8 @@ builder.Services.AddSwaggerForOcelot(builder.Configuration);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddServiceDiscovery(o => o.UseEureka());
-// builder.Services.AddDiscoveryClient();
- builder.Services.AddControllers();
+
+builder.Services.AddControllers();
 
 
 var app = builder.Build();

@@ -1,0 +1,105 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-gateway
+  template:
+    metadata:
+      labels:
+        app: api-gateway
+    spec:
+      containers:
+       - name: api-gateway
+         image: docker.io/sajadkiani/api-gateway:1.0.16
+         imagePullPolicy: IfNotPresent
+         ports:
+           - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-gateway-clusterip
+spec:
+  type: ClusterIP
+  selector:
+    app: api-gateway
+  ports:
+  - name: api-gateway-port
+    protocol: TCP
+    port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-gatewaynp
+spec:
+  type: NodePort
+  selector: 
+    app: api-gateway
+  ports:
+   - name:  api-gatewaynp
+     port:  80
+     protocol: TCP
+     targetPort: 80
+---
+
+
+
+
+
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eureka
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eureka
+  template:
+    metadata:
+      labels:
+        app: eureka
+    spec:
+      containers:
+       - name: eureka
+         image: steeltoeoss/eureka-server:latest
+         imagePullPolicy: IfNotPresent
+         ports:
+           - containerPort: 8761
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: eurekanp
+spec:
+  type: NodePort
+  selector: 
+    app: eureka
+  ports:
+   - name:  eurekanp
+     port:  8761
+     protocol: TCP
+     targetPort: 8761
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: eureka-clusterip
+spec:
+  type: ClusterIP
+  selector:
+    app: eureka
+  ports:
+  - name: eureka-port
+    protocol: TCP
+    port: 8761
+    targetPort: 8761
+
