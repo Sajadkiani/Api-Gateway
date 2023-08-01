@@ -1,0 +1,32 @@
+{
+    "GlobalConfiguration": {
+      "RequestIdKey": "OcRequestId",
+      "DownstreamScheme": "http",
+      "ReRoutesCaseSensitive": false,
+      "UseServiceDiscovery": true,
+      "ServiceDiscoveryProvider": {
+        "Host": "eureka-clusterip",
+        "Port": 8761,
+        "Type": "Eureka"
+      }
+    },
+    "Routes": [
+      {
+        "DownstreamPathTemplate": "/{everything}",
+        "DownstreamScheme": "http",
+        "SwaggerKey": "identity",
+        "UseServiceDiscovery": true,
+        "ServiceName": "SERVICE.IDENTITY",
+        "UpstreamPathTemplate": "/identity/{everything}",
+        "UpstreamHttpMethod": [
+          "GET",
+          "POST",
+          "PUT",
+          "DELETE"
+        ],
+        "LoadBalancerOptions": {
+          "Type": "LeastConnection"
+        }
+      }
+    ]
+  }
